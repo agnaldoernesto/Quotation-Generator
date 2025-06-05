@@ -1,0 +1,259 @@
+:root {
+    --lilas-escuro: #7f4c93;
+    --lilas-medio: #9c64b0;
+    --lilas-claro: #b88ac1;
+    --texto-claro: #fff;
+    --cinza-fundo: #f0f2f5;
+}
+
+
+
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--cinza-fundo);
+    padding: 20px;
+    color: #333;
+    height: 85dvh;
+    animation: fadeIn 0.8s ease;
+    display: grid;
+    place-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--lilas-escuro);
+}
+
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    animation: fadeIn 0.6s ease;
+
+}
+
+.service-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -webkit-moz-appearance: textfield;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--lilas-escuro);
+}
+
+.input-group {
+    position: relative;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    width: 90%;
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background: white;
+    font-size: 1rem;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    color: var(--lilas-claro);
+    transform: translateY(-50%);
+    transition: 0.2s ease all;
+    pointer-events: none;
+    background: white;
+    padding: 0 4px;
+    font-size: 1rem;
+}
+
+.input-group input:focus+label,
+.input-group input:not(:placeholder-shown)+label {
+    top: 0;
+    left: 8px;
+    font-size: 0.75rem;
+    color: var(--lilas-escuro);
+    border-radius: 10px;
+}
+
+.middle-control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--lilas-medio);
+    color: var(--texto-claro);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: var(--lilas-escuro);
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(124, 58, 153, 0.3);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: right;
+    margin-top: 20px;
+}
+
+p strong {
+    color: var(--lilas-escuro);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInNewRow 0.4s forwards ease;
+}
+
+@keyframes fadeInNewRow {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (min-width:481px) and (max-width: 768px) {
+    .service-row {
+        flex-direction: line;
+        gap: 10px;
+    }
+
+    .buttons {
+        align-items: stretch;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
+
+
+@media (min-width:321px) and (max-width: 480px) {
+    .service-row {
+        flex-direction: column;
+    }
+    body {
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    button {
+        width: 20%;
+        height: 40px;
+    }
+    
+}
+@media (max-width: 320px) {
+    .service-row {
+        flex-direction: column;
+    }
+    .buttons {
+        width: 70%;
+        flex-wrap: wrap;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    button,
+    .buttons,
+    #addLineButton {
+        display: none !important;
+    }
+
+    input {
+        border: none;
+        padding: 4px;
+        font-size: 14px;
+    }
+
+    input::placeholder {
+        color: transparent;
+    }
+
+    h2::after {
+        content: " - Cópia para impressão";
+        font-size: 14px;
+        color: gray;
+    }
+
+    form {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+}
+
+

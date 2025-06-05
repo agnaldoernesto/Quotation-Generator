@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Cotação</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"
+        defer></script>
+    <script src="js/script.min.js" defer></script>
+</head>
+
+<body>
+    <h2>Gerador de Cotação de Serviços</h2>
+    <form id="quotationForm" method="post" action="php/save_quotation.php">
+        <div id="services">
+            <div class="service-row fade-in">
+                <div class="input-group">
+                    <input type="text" name="description[]" required placeholder=" ">
+                    <label>Descrição</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="maintenance_type[]" required placeholder=" ">
+                    <label>Tipo</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="price[]" required step="0.001" placeholder=" " minlength="1" maxlength="5">
+                    <label>Preço</label>
+                </div>
+            </div>
+        </div>
+        <div class="middle-control">
+            <button type="button" id="addLineButton" onclick="addService()">+</button>
+            <p><strong>Total:</strong> <span id="totalValue">0 MZN</span></p>
+        </div>
+        <div class="buttons">
+            <button type="submit">Salvar Cotação</button>
+            <button type="button" onclick="printQuotation()">Imprimir</button>
+            <button type="button" onclick="exportToPDF()">Exportar PDF</button>
+            <button type="button" onclick="exportToExcel()">Exportar Excel</button>
+        </div>
+    </form>
+</body>
+
+</html>
