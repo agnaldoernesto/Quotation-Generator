@@ -1,6 +1,27 @@
-# 🛠️ Services/Maintenance Quotation Generator
+## 🛠️ Services/Maintenance Quotation Generator
 
-This repository hosts a robust, user-friendly application designed to **streamline the creation and management of service and maintenance quotations**. It provides a powerful tool for generating professional, accurate, and customized quotes for clients.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Tech Stack](https://img.shields.io/badge/Tech-HTML5%20%7C%20CSS3%20%7C%20JS-blue.svg)]()
+
+This repository hosts a simple, lightweight pricing utility designed to assist with creating and tracking **simple technical cost proposals** quickly. This tool is ideal for field operations or small businesses needing fast, transparent cost breakdowns for their prospective buyers.
+
+---
+
+## 🎯 Purpose and Focus
+
+The Cotation Generator is intentionally minimal, prioritizing clarity and speed. It offers a clear, structured template for creating price breakdowns without unnecessary complexity.
+
+---
+
+## ⚙️ Core Functionality
+
+This application is built around a mandatory **three-column structure** to ensure every proposal provides a specific, detailed itemized cost breakdown:
+
+| Field Name | Portuguese Term | Description |
+| :--- | :--- | :--- |
+| **Item Description** | `descricao` | Detailed description of the work performed or item supplied. |
+| **Work Type** | `tipo de manutenção` | Classification of the operation (e.g., repair, inspection, replacement). |
+| **Cost** | `preço` | The final price associated with the specific line item. |
 
 ---
 
